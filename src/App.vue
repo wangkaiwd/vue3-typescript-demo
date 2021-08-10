@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <a-button type="primary">按钮</a-button>
-  </div>
+  <todos></todos>
 </template>
 
 <script lang="ts">
+
 import { defineComponent } from 'vue';
+import Todos from './components/vuex/todos.vue';
 
 export default defineComponent({
   name: 'App',
-  components: {}
+  components: { Todos },
 });
 </script>
-
-<style>
-</style>
