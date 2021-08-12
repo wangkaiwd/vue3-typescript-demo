@@ -18,6 +18,7 @@ const routes: AppRouteRecordRaw[] = [
     path: '/',
     name: 'layout',
     component: () => import('../layout.vue'),
+    redirect: { name: 'home' },
     meta: {
       title: 'layout',
     },
