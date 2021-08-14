@@ -1,5 +1,6 @@
 <template>
   <!--  <todos></todos>-->
+  <a-button type="primary" @click="showMessage">show message</a-button>
   <w-transfer>
   </w-transfer>
 </template>
@@ -9,6 +10,7 @@
 import { defineComponent, ref } from 'vue';
 import Todos from './components/vuex/todos.vue';
 import WTransfer from './components/wTransfer/wTransfer.vue';
+import Message from './components/message';
 
 function useTransfer () {
   function generateData () {
@@ -39,8 +41,12 @@ export default defineComponent({
   components: { WTransfer, Todos },
   setup () {
     const info = useTransfer();
+    const showMessage = () => {
+      Message({ message: 'hhhh' });
+    };
     return {
-      ...info
+      ...info,
+      showMessage
     };
   }
 });

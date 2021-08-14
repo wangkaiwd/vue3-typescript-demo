@@ -4,5 +4,11 @@ import 'ant-design-vue/dist/antd.less';
 import Layout from './layout.vue';
 import store, { key } from './store';
 import router from './router';
+import Message from './components/message';
 
-createApp(Layout).use(Antd).use(store, key).use(router).mount('#app');
+const app = createApp(Layout);
+// register plugin
+app.use(Antd).use(Message as any).use(store, key).use(router);
+
+// mount component to dom
+app.mount('#app');
