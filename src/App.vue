@@ -1,16 +1,19 @@
 <template>
   <!--  <todos></todos>-->
   <a-button type="primary" @click="showMessage">show message</a-button>
+  <h2>{{ x }}</h2>
+  <h2>{{ y }}</h2>
   <w-transfer>
   </w-transfer>
 </template>
 
 <script lang="ts">
 
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, toRefs } from 'vue';
 import Todos from './components/vuex/todos.vue';
 import WTransfer from './components/wTransfer/wTransfer.vue';
 import Message from './components/message';
+import useMousePosition from './hooks/useMousePosition/useMousePosition';
 
 function useTransfer () {
   function generateData () {
@@ -44,9 +47,11 @@ export default defineComponent({
     const showMessage = () => {
       Message({ message: 'hhhh' });
     };
+    useMousePosition();
     return {
       ...info,
-      showMessage
+      showMessage,
+      ...toRefs(useMousePosition())
     };
   }
 });
