@@ -1,9 +1,24 @@
-## Vue 3 + Typescript + Vite
+# vue3-typescript-demo
 
-### 启动项目
+## Project setup
+```
+yarn install
+```
 
-* [start error](https://github.com/evanw/esbuild/issues/462#issuecomment-771328459)
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
 
-### other
+### Compiles and minifies for production
+```
+yarn build
+```
 
-* [jsx next](https://github.com/vuejs/jsx-next)
+### Run your unit tests
+```
+yarn test:unit
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
